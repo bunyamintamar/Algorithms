@@ -1,22 +1,32 @@
 #include <iostream>
 using namespace std;
 
-int Show_BiggerOne(int num1, int num2)
+void Get_Exam_Grade(int* midterm, int* final)
 {
-	return num1>num2 ? num1 : num2;
+	cout << "Enter midterm exam grade : ";
+	cin >> *midterm;
+	cout << "Enter final exam grade   : ";
+	cin >> *final;
+}
+
+int Calculate_Average(int midterm, int final)
+{
+	return (int)((float)midterm * 0.4 + (float)final * 0.6);
 }
 
 int main(void)
 {
-	int Num1;
-	int Num2;
+	int Midterm, Final;
 	
-	cout << "Enter first number   : ";
-	cin >> Num1;
-	cout << "Enter second number  : ";
-	cin >> Num2;
-	
-	cout << "Bigger number is     : " << Show_BiggerOne(Num1,Num2);
+	Get_Exam_Grade(&Midterm,&Final);
+	if( Calculate_Average(Midterm, Final) >= 60 )
+	{
+		cout << "PASSED!";
+	}
+	else
+	{
+		cout << "NOT PASSED!";
+	}
 	return 0;
 }
 
