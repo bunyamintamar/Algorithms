@@ -1,29 +1,32 @@
 #include <iostream>
 using namespace std;
 
-void Get_numbers(int count, int *num)
+void Get_Num(int *num)
 {
-	cout << "Enter " << count+1 << ". number : ";
+	cout << "Enter a number          : ";
 	cin >> *num;
 }
 
-void Calculate(int count, int num, float *avg, int *ttl)
+void Calculate_Factorial(int num)
 {
-	*ttl = *ttl + num;
-	*avg = (float)(*ttl) / (float)(count+1);
+	int counter, factorial;
+	
+	factorial = 1;
+	
+	for(counter = 1; counter <= num; counter++ )
+	{
+		factorial = factorial * counter;
+	}
+	
+	cout << "Factorial of the number : " << factorial;
 }
 
 int main(void)
 {
-	int counter, number, total;
-	float average;
+	int Number;
 	
-	for( counter = 0; counter < 5; counter++ )
-	{
-		Get_numbers(counter, &number);
-		Calculate(counter,number,&average,&total);
-	}
-	cout << "Average : " << average << endl << "Total   : " << total;
+	Get_Num(&Number);
+	Calculate_Factorial(Number);
 	return 0;
 }
 
