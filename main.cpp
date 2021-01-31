@@ -1,32 +1,23 @@
 #include <iostream>
 using namespace std;
 
-void Get_Num(int *num)
+void Get_Fahrenheit(int *f)
 {
-	cout << "Enter a number          : ";
-	cin >> *num;
+	cout << "Enter fahrenheit : ";
+	cin >> *f;
 }
 
-void Calculate_Factorial(int num)
+int ConverToCelcius(int f)
 {
-	int counter, factorial;
-	
-	factorial = 1;
-	
-	for(counter = 1; counter <= num; counter++ )
-	{
-		factorial = factorial * counter;
-	}
-	
-	cout << "Factorial of the number : " << factorial;
+	return (int)(  (float)(f-32) * (5.0/9.0)  );
 }
 
 int main(void)
 {
-	int Number;
+	int Fahrenheit, Celcius;
 	
-	Get_Num(&Number);
-	Calculate_Factorial(Number);
+	Get_Fahrenheit(&Fahrenheit);
+	cout << "Celcius          : " << ConverToCelcius(Fahrenheit);
 	return 0;
 }
 
