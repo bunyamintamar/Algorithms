@@ -1,33 +1,28 @@
 #include <iostream>
 using namespace std;
 
-void Get_Num(int *num)
+void Get_Name(char *name)
 {
-	cout << "Enter any number : ";
-	cin >> *num;
+	cout << "Your name : ";
+	cin >> name;
 }
 
-void Show_SignOfNum(int *num)
+void Show_Name_10_Times(char *name)
 {
-	if( *num == 0 )
+	int counter;
+	for( counter = 0; counter < 10; counter++ )
 	{
-		cout << "Entered number is ZERO";
-	}
-	else if( *num > 0 )
-	{
-		cout << "Entered number is a POSITIVE number";
-	}
-	else
-	{
-		cout << "Entered number is a NEGATIVE number";
+		cout << name << endl;
 	}
 }
 
 int main(void)
 {
-	int Number;
+	char Name[20];
 	
-	Get_Num(&Number);
-	Show_SignOfNum(&Number);
+	Get_Name(Name);
+	Show_Name_10_Times(Name);
+	
 	return 0;
 }
+
