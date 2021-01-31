@@ -1,30 +1,29 @@
 #include <iostream>
 using namespace std;
 
-void Get_Price(float *price)
+void Get_numbers(int count, int *num)
 {
-	cout << "Enter price : ";
-	cin >> *price;
+	cout << "Enter " << count+1 << ". number : ";
+	cin >> *num;
 }
 
-void Add_Tax(float *price)
+void Calculate(int count, int num, float *avg, int *ttl)
 {
-	
-	*price = *price * 1.18;
-}
-
-void Show_New_Price(float *New)
-{
-	cout << "New price with tax : " << *New;
+	*ttl = *ttl + num;
+	*avg = (float)(*ttl) / (float)(count+1);
 }
 
 int main(void)
 {
-	float Price;
+	int counter, number, total;
+	float average;
 	
-	Get_Price(&Price);
-	Add_Tax(&Price);
-	Show_New_Price(&Price);
+	for( counter = 0; counter < 5; counter++ )
+	{
+		Get_numbers(counter, &number);
+		Calculate(counter,number,&average,&total);
+	}
+	cout << "Average : " << average << endl << "Total   : " << total;
 	return 0;
 }
 
