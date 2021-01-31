@@ -1,26 +1,30 @@
 #include <iostream>
 using namespace std;
 
-int isThisOdd(int num)
+void Get_Price(float *price)
 {
-	return (num%2) ? num : -1;
+	cout << "Enter price : ";
+	cin >> *price;
 }
 
-void Show_Odd_Numbers_Between_0_100(void)
+void Add_Tax(float *price)
 {
-	int number;
-	for(number = 0; number <= 100; number++)
-	{
-		if( isThisOdd(number) != -1 )
-		{
-			cout << number << endl;
-		}
-	}
+	
+	*price = *price * 1.18;
+}
+
+void Show_New_Price(float *New)
+{
+	cout << "New price with tax : " << *New;
 }
 
 int main(void)
 {
-	Show_Odd_Numbers_Between_0_100();
+	float Price;
+	
+	Get_Price(&Price);
+	Add_Tax(&Price);
+	Show_New_Price(&Price);
 	return 0;
 }
 
