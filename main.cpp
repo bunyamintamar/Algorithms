@@ -1,28 +1,26 @@
 #include <iostream>
 using namespace std;
 
-void Get_Name(char *name)
+int isThisOdd(int num)
 {
-	cout << "Your name : ";
-	cin >> name;
+	return (num%2) ? num : -1;
 }
 
-void Show_Name_10_Times(char *name)
+void Show_Odd_Numbers_Between_0_100(void)
 {
-	int counter;
-	for( counter = 0; counter < 10; counter++ )
+	int number;
+	for(number = 0; number <= 100; number++)
 	{
-		cout << name << endl;
+		if( isThisOdd(number) != -1 )
+		{
+			cout << number << endl;
+		}
 	}
 }
 
 int main(void)
 {
-	char Name[20];
-	
-	Get_Name(Name);
-	Show_Name_10_Times(Name);
-	
+	Show_Odd_Numbers_Between_0_100();
 	return 0;
 }
 
