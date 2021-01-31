@@ -1,32 +1,33 @@
 #include <iostream>
 using namespace std;
 
-void Get_Exam_Grade(int* midterm, int* final)
+void Get_Num(int *num)
 {
-	cout << "Enter midterm exam grade : ";
-	cin >> *midterm;
-	cout << "Enter final exam grade   : ";
-	cin >> *final;
+	cout << "Enter any number : ";
+	cin >> *num;
 }
 
-int Calculate_Average(int midterm, int final)
+void Show_SignOfNum(int *num)
 {
-	return (int)((float)midterm * 0.4 + (float)final * 0.6);
+	if( *num == 0 )
+	{
+		cout << "Entered number is ZERO";
+	}
+	else if( *num > 0 )
+	{
+		cout << "Entered number is a POSITIVE number";
+	}
+	else
+	{
+		cout << "Entered number is a NEGATIVE number";
+	}
 }
 
 int main(void)
 {
-	int Midterm, Final;
+	int Number;
 	
-	Get_Exam_Grade(&Midterm,&Final);
-	if( Calculate_Average(Midterm, Final) >= 60 )
-	{
-		cout << "PASSED!";
-	}
-	else
-	{
-		cout << "NOT PASSED!";
-	}
+	Get_Num(&Number);
+	Show_SignOfNum(&Number);
 	return 0;
 }
-
